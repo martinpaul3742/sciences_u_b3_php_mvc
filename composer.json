@@ -1,11 +1,11 @@
 {
-    "name": "martinpaul/mvc",
-    "description": "PHP7 MVC App example",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "require": {}
+  "name": "ld-web/mvc",
+  "description": "PHP7 MVC App example",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {}
 }
