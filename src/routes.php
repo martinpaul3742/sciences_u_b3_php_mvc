@@ -7,7 +7,7 @@ use App\Controller\HomeController;
 // Home
 $router->addRoute(new Route([
     'path' => '/',
-    'httpMethod' => 'GET',
+    'httpMethod' => GET,
     'name' => 'home',
     'class' => HomeController::class,
     'method' => 'index'

@@ -41,6 +41,17 @@ $twig = new Environment($loader, [
 ]);
 
 $router = new Router($entityManager, $twig);
+
+define('POST', 'POST');
+define('GET', 'GET');
+define('PUT', 'PUT');
+define('HEAD', 'HEAD');
+define('DELETE', 'DELETE');
+define('CONNECT', 'CONNECT');
+define('OPTIONS', 'OPTIONS');
+define('TRACE', 'TRACE');
+define('PATCH', 'PATCH');
+
 include __DIR__ . '/../src/routes.php'; // charge les routes
 $router->execute($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 
