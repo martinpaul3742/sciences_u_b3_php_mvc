@@ -52,6 +52,13 @@ define('OPTIONS', 'OPTIONS');
 define('TRACE', 'TRACE');
 define('PATCH', 'PATCH');
 
-include __DIR__ . '/../src/routes.php'; // charge les routes
-$router->execute($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 
+if (php_sapi_name() !== "cli") { // Not in cli-mode
+    include __DIR__ . '/../src/routes.php'; // charge les routes
+    $router->execute($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
+}
+
+
+// use App\Entity\User;
+
+// $userRepository = $entityManager->getRepository(User::class);

@@ -14,7 +14,7 @@ class Route
     function __construct(array $params = [])
     {
         $this->path = isset($params['path']) ? $params['path'] : false;
-        $this->httpMethod = isset($params['httpMethod']) ? $params['httpMethod'] : 'GET';
+        $this->httpMethod = isset($params['httpMethod']) ? $params['httpMethod'] : ['GET'];
         $this->name = isset($params['name']) ? $params['name'] : $this->path;
         $this->class = isset($params['class']) ? $params['class'] : false;
         $this->method = isset($params['method']) ? $params['method'] : false;

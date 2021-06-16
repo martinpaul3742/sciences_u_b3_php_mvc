@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+
+		{% if users %}
+			<h1 class="mb-3">Liste des utilisateurs</h1>
+		{% else %}
+			<h1 class="mb-3">Aucun utilisateurs</h1>
+		{% endif %}
+		
+		<div class="users row">
+			{% for user in users %}
+				<div class="col-3">
+					<div class="card mb-3">
+						<div class="card-body d-flex flex-column align-items-center">
+							<img class="avatar mb-2" src="{{user.picture}}" />
+							<p>{{ user.name }}</p>
+							<a href="{{ rootUrl }}/user/delete-{{ user.id }}">Supprimer l'utilisateur</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<hr>
+		<p>(Le service Faker API est HS, les noms seront donc statiques)</p>
+		<a href="{{ rootUrl }}/user/new-random-female" class="btn btn-success">Nouvel utilisateur (femme)</a>
+		<a href="{{ rootUrl }}/user/new-random-male" class="btn btn-success">Nouvel utilisateur (homme)</a>
+	</div>
+{% endblock %}
